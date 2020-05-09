@@ -79,7 +79,7 @@ def getPPI(my_genes,threshold):
 	response = requests.post(request_url, data=params)
 	templist = []
 	for line in response.text.strip().split("\n"):
-		print(line)
+		#print(line)
 		l = line.strip().split("\t")
 		if len(l) < 5:
 			break
@@ -110,10 +110,10 @@ def calculateEntropy(geneInSet,GeneInBackground,threshold):
 	for PPI in globalx:
 		temp2 -= PPI * math.log(PPI)
 	temp2 -= (TotalLen-len(globalx))*threshold* math.log(threshold)
-	print(temp1)
-	print(temp2)
-	print(TotalLen)
-	print(len(globalx))
+	#rint(temp1)
+	#print(temp2)
+	#print(TotalLen)
+	#print(len(globalx))
 	Evalue = float(-math.log(temp2/temp1))
 	return Evalue
  
